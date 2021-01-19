@@ -70,9 +70,9 @@ func main() {
 	m2 := new(Member)
 	//函数改变值--------------   func(struct)
 	/*
-		默认的函数传参传结构体进去，结构体本身不会进行任何改变
-	    因为函数传的参数会拷贝一份
-	 */
+			默认的函数传参传结构体进去，结构体本身不会进行任何改变
+		    因为函数传的参数会拷贝一份
+	*/
 	Change(m1, m2)
 	fmt.Println(m1)
 	fmt.Println(m2)
@@ -80,19 +80,20 @@ func main() {
 	//a :=
 	//fmt.Println(a)
 	fmt.Println("----------------------")
-	testMap := map[int32] string{}
+	testMap := map[int32]string{}
 	testMap[1] = "a"
 	testMap[2] = "b"
 	testMap[3] = "c"
 	fmt.Println("原始值:", testMap)
 	test(testMap)
 	fmt.Println("处理后的值", testMap)
+	//这个接口是这个结构体的实现
 	type Intf interface {
 		M1()
 		M2()
 	}
 	//var t3 T = T{"t1"}
-	var t3  = T{"t3"}
+	var t3 = T{"t3"}
 	// t3的指针实现了M2方法
 	fmt.Println("M1调用前：", t3.Name)
 	t3.M1()
@@ -110,5 +111,5 @@ func main() {
 	it.M1()
 	it.M2()
 	//fmt.Println("M2调用后：", it.Name)
-
+	fmt.Println(t3)
 }
